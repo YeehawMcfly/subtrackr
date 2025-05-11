@@ -1,0 +1,286 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+body {
+  padding-bottom: 70px;
+}
+
+main {
+  min-height: calc(100vh - 70px);
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Modern footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 16px;
+  background: #1976D2;
+  color: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: #1976D2;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #333;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+/* Card styling */
+mat-card {
+  margin: 16px 0;
+  padding: 24px;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+mat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+mat-card-title {
+  font-size: 1.5rem !important;
+  margin-bottom: 16px !important;
+  color: #1976D2;
+}
+
+mat-card-content {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Table styling */
+mat-table {
+  width: 100%;
+  box-shadow: none !important;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+mat-header-row {
+  background-color: #f0f4f8 !important;
+}
+
+mat-header-cell {
+  color: #555 !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+}
+
+mat-row {
+  transition: background-color 0.2s;
+}
+
+mat-row:hover {
+  background-color: #f0f7ff !important;
+}
+
+mat-cell {
+  font-size: 0.95rem !important;
+}
+
+/* Form controls */
+mat-form-field {
+  width: 100%;
+  margin: 12px 0;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  font-size: 0.8rem;
+}
+
+/* Buttons */
+.mdc-button {
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px !important;
+  padding: 0 20px !important;
+  height: 40px !important;
+  transition: transform 0.2s !important;
+}
+
+.mdc-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Improve primary button contrast */
+.mat-mdc-raised-button.mat-primary {
+  background-color: #1976D2 !important;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.2) !important;
+  color: white !important; /* Ensure text is white */
+  font-weight: 500 !important; /* Make text bolder */
+}
+
+/* Improve accent button contrast */
+.mat-mdc-raised-button.mat-accent {
+  background-color: #ff4081 !important;
+  box-shadow: 0 4px 12px rgba(255, 64, 129, 0.2) !important;
+  color: white !important; /* Ensure text is white */
+  font-weight: 500 !important; /* Make text bolder */
+}
+
+/* Improve basic button contrast */
+.mat-mdc-button.mat-primary {
+  color: #1976D2 !important; /* Stronger blue color for text */
+  font-weight: 500 !important; /* Make text bolder */
+}
+
+/* Improve icon button visibility */
+.mat-mdc-icon-button {
+  color: rgba(0, 0, 0, 0.8) !important; /* Darker icon color */
+}
+
+/* Ensure icon alignment in buttons */
+button mat-icon {
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Navigation button styling - replace the existing styles in lines 163-191 */
+/* Additional navigation button styling */
+.mat-mdc-button {
+  letter-spacing: 0.5px !important;
+}
+
+/* Toolbar navigation buttons */
+.mat-toolbar .mat-mdc-button {
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  line-height: 1.2 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Stronger text shadow for better contrast */
+  padding: 0 16px !important;
+  height: 42px !important;
+  margin: 0 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.15) !important; /* Light background for better contrast */
+  position: relative;
+  overflow: hidden;
+}
+
+.mat-toolbar .mat-mdc-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.mat-toolbar .mat-mdc-button:hover {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.25) !important; /* Lighter on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mat-toolbar .mat-mdc-button:hover::after {
+  transform: scaleX(0.7);
+}
+
+.mat-toolbar .mat-mdc-button.active {
+  background-color: rgba(255, 255, 255, 0.3) !important; /* Even lighter when active */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.mat-toolbar .mat-mdc-button.active::after {
+  transform: scaleX(1);
+}
+
+.mat-toolbar .mat-mdc-button mat-icon {
+  margin-right: 8px;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+.mat-toolbar .mat-mdc-button span {
+  font-weight: 500;
+  background-color: rgba(25, 118, 210, 0.3); /* Semi-transparent blue that matches your theme */
+  padding: 3px 6px;
+  border-radius: 3px;
+  color: #ffffff; /* Bright white text color for better visibility */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); /* Enhanced text shadow for better contrast */
+}
+
+/* Error messages */
+.error {
+  color: #f44336;
+  background-color: rgba(244, 67, 54, 0.08);
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.error::before {
+  content: "⚠️";
+  margin-right: 8px;
+}
+
+/* Charts */
+canvas {
+  max-width: 100%;
+  height: auto !important;
+  margin: 24px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  main {
+    padding: 16px;
+  }
+  
+  mat-card {
+    padding: 16px;
+    margin: 12px 0;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  canvas {
+    max-height: 300px;
+  }
+}

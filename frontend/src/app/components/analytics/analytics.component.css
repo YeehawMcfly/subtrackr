@@ -1,0 +1,30 @@
+.chart-container {
+  position: relative;
+  height: 400px; /* Fixed height for the chart container */
+  width: 100%;
+  margin: 20px 0;
+}
+
+.chart-options {
+  margin-bottom: 20px;
+}
+
+.error {
+  color: #f44336;
+  background-color: rgba(244, 67, 54, 0.08);
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+  max-width: 300px;
+}
+
+.summary {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1976D2;
+}

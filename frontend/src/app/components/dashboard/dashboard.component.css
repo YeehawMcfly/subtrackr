@@ -1,0 +1,107 @@
+.error {
+  color: red;
+  margin-bottom: 10px;
+  margin-top: 16px;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.summary-section {
+  grid-column: 1/-1;
+}
+
+.spend-summary {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.spend-amount {
+  padding: 24px;
+}
+
+.spend-label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.spend-value {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #1976D2;
+}
+
+.section-icon {
+  vertical-align: middle;
+  margin-right: 8px;
+  color: #1976D2;
+}
+
+mat-card-subtitle {
+  color: #666;
+  margin-top: 4px;
+}
+
+.upcoming-item {
+  border-bottom: 1px solid #f0f0f0;
+  margin: 8px 0;
+}
+
+.sub-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sub-name {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+}
+
+.sub-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.due-date {
+  background-color: #e8f4fd;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.sub-price {
+  font-weight: 500;
+}
+
+.no-data {
+  color: #888;
+  text-align: center;
+  padding: 24px 0;
+  font-style: italic;
+}
+
+.plaid-card {
+  background-color: #f8fdff;
+  border: 1px solid #e0f2ff;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .spend-value {
+    font-size: 2rem;
+  }
+}

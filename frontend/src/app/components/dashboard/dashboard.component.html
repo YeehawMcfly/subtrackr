@@ -1,0 +1,60 @@
+<div class="dashboard-container">
+  <div class="summary-section">
+    <mat-card>
+      <mat-card-content>
+        <div class="spend-summary">
+          <div class="spend-amount">
+            <div class="spend-label">Total Monthly Spend</div>
+            <div class="spend-value">{{ totalMonthlySpend | currency }}</div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon class="section-icon">today</mat-icon>
+        Upcoming Due Dates
+      </mat-card-title>
+      <mat-card-subtitle>Next 7 days</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="upcomingSubscriptions.length === 0" class="no-data">
+        No upcoming payments in the next 7 days.
+      </div>
+      <mat-list *ngIf="upcomingSubscriptions.length > 0">
+        <mat-list-item *ngFor="let sub of upcomingSubscriptions" class="upcoming-item">
+          <div class="sub-info">
+            <div class="sub-name">{{ sub.name }}</div>
+            <div class="sub-details">
+              <span class="due-date">Due: {{ sub.next_due_date | date }}</span>
+              <span class="sub-price">{{ sub.price | currency }}</span>
+            </div>
+          </div>
+        </mat-list-item>
+      </mat-list>
+      <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="plaid-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon class="section-icon">account_balance</mat-icon>
+        Connect Your Bank Account
+      </mat-card-title>
+      <mat-card-subtitle>Link your bank for automatic subscription detection</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Connect your bank account to automatically identify subscription payments and get personalized insights.</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="connectBankAccount()">
+        <mat-icon>link</mat-icon>
+        Connect Bank Account
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

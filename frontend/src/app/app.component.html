@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="app-toolbar">
+  <div class="toolbar-container">
+    <div class="logo-section">
+      <span class="app-logo">SubTrackr</span>
+    </div>
+    <nav class="nav-links">
+      <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </a>
+      <a mat-button routerLink="/subscriptions" routerLinkActive="active">
+        <mat-icon>subscriptions</mat-icon>
+        <span>Subscriptions</span>
+      </a>
+      <a mat-button routerLink="/analytics" routerLinkActive="active">
+        <mat-icon>insert_chart</mat-icon>
+        <span>Analytics</span>
+      </a>
+    </nav>
+  </div>
+</mat-toolbar>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <p>© 2025 SubTrackr. All rights reserved.</p>
+  </div>
+</footer>

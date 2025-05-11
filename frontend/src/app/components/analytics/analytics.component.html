@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Analytics</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    <div class="chart-options">
+      <mat-form-field appearance="fill">
+        <mat-label>View</mat-label>
+        <mat-select [(ngModel)]="viewType" (selectionChange)="updateChart()">
+          <mat-option value="category">By Category</mat-option>
+          <mat-option value="month">By Month</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <h3 *ngIf="viewType === 'category'">Spending by Category</h3>
+    <h3 *ngIf="viewType === 'month'">Monthly Spending Trend</h3>
+    <div class="chart-container">
+      <canvas
+        baseChart
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [options]="chartOptions"
+        [type]="chartType"
+        [legend]="true"
+      ></canvas>
+    </div>
+    <div class="summary" *ngIf="totalSpend > 0">
+      Total Spend: {{ totalSpend | currency }}
+    </div>
+  </mat-card-content>
+</mat-card>
