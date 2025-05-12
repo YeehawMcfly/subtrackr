@@ -17,6 +17,7 @@ export class SubscriptionService {
   }
 
   getSubscription(id: number): Observable<Subscription> {
+    console.log(`Fetching subscription with ID: ${id}`);
     return this.http.get<Subscription>(`${this.apiUrl}/subscriptions/${id}`);
   }
 
